@@ -1,0 +1,123 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0; /* Color gris mate */
+}
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.contenedor-banner {
+    padding-top: 15px;
+    width: 100%; /* El contenedor ocupa el 100% del ancho */
+    text-align: center; /* Asegura que el contenido esté centrado */
+}
+
+.banner {
+    width: 60%;
+    margin: 0 auto;
+    background-color: #8ABB2A; /* Color de fondo para la barra */
+    color: white; /* Color del texto */
+    text-align: center;
+    padding: 20px 0;
+    position: relative; /* Necesario para que el clip-path se posicione correctamente */
+    clip-path: polygon(
+        0 0, /* Esquina superior izquierda */
+        90% 0, /* Punto superior derecho antes de los picos */
+        95% 10%, /* Primer pico */
+        90% 20%, /* Punto intermedio */
+        95% 30%, /* Segundo pico */
+        90% 40%, /* Punto intermedio */
+        95% 50%, /* Tesrcer pico */
+        90% 60%, /* Punto intermedio */
+        95% 70%, /* Cuarto pico */
+        90% 80%, /* Punto intermedio */
+        95% 90%, /* Quinto pico */
+        90% 100%, /* Punto inferior derecho antes de los picos */
+        0 100% /* Esquina inferior izquierda */
+    );
+}
+
+h1, h2 {
+    font-size: 3em; /* Aumenta el tamaño del texto (ajusta el valor según tus necesidades) */
+    margin: 0; /* Elimina el margen predeterminado */
+    font-weight: bold; /* Hace que el texto sea más grueso */
+    line-height: 1.2; /* Ajusta la altura de línea para controlar el espaciado vertical */
+}   
+
+h2 {
+    color: #366539;
+}
+
+
+.cuerpo {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se dividan en varias filas */
+    justify-content: space-between; /* Espacio entre los elementos */
+    padding: 20px;
+}
+
+.cuerpo > a {
+    margin: 20px 60px 20px 60px;
+    flex: 40%; /* Cada enlace ocupará el 44% del ancho */
+    box-sizing: border-box; /* Incluye padding y border dentro del ancho */
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+    border-radius: 10px; /* Bordes redondeados para dar forma de carta */
+    overflow: hidden; /* Esconde el contenido que se sale del borde redondeado */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para dar efecto de elevación */
+    transition: transform 0.2s, box-shadow 0.2s; /* Transiciones para el efecto hover */
+}
+
+.cuerpo > a:hover {
+    transform: translateY(-5px); /* Mueve la carta ligeramente hacia arriba */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Incrementa la sombra en hover */
+}
+
+.cuerpo > a > div {
+    display: flex; /* Habilita flexbox en el contenedor */
+    justify-content: center; /* Centra horizontalmente el contenido */
+    align-items: center; /* Centra verticalmente el contenido */
+    padding: 20px;
+    color: white; /* Color del texto para contrastar con la imagen de fondo */
+    background-size: cover; /* Asegura que la imagen se ajuste dentro del div */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center center; /* Centra la imagen */
+    width: 100%; /* Asegura que el contenedor tome todo el ancho disponible */
+    height: 190px; /* Altura de cada div */
+    text-align: center; /* Centra el texto */
+    cursor: pointer; /* Cambia el cursor a pointer para indicar que es clicable */
+}
+
+/* Especificar imágenes de fondo para cada sección */
+.registrarse {
+    background-image: url('images/background-2.jpg');
+}
+
+.materias {
+    background-image: url('images/materias.jpg');
+}
+
+.concepto {
+    background-image: url('images/background.jpg');
+}
+
+.logo {
+    background-image: url('images/prueb.jpg');
+}
+
+/* Para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .cuerpo > a {
+        flex: 0 0 48%; /* Dos columnas en pantallas pequeñas */
+    }
+}
+
+/* Para pantallas aún más pequeñas */
+@media (max-width: 480px) {
+    .cuerpo > a {
+        flex: 0 0 100%; /* Una columna en pantallas muy pequeñas */
+    }
+}
