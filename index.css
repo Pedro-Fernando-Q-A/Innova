@@ -1,143 +1,98 @@
-body {
-    margin: 0;
+body{
     padding: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    margin: 0;
+    background-color: #009999;
 }
 
 .container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    background: linear-gradient(to bottom, #3232f8, #87cefa);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    padding: 20px;
+    max-width: 1000px; /* Ancho máximo del contenedor */
+    margin: 0 auto; /* Centra el contenedor en la página */
+    padding: 20px; /* Espaciado interno para no tocar los bordes */
 }
 
+
 .header {
-    width: 100%; /* Ancho completo del header */
-    display: flex;
-    justify-content: center; /* Centra el contenido dentro del header */
-    align-items: center;
-    background-color: transparent;
-       
+    display: flex; /* Usa flexbox para alinear los elementos */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente si es necesario */
+    margin-bottom: 20px; /* Espacio debajo del encabezado */
+    text-align: center; /* Asegura que el texto dentro esté centrado */
 }
 
 .ticket {
-    display: flex;
-    width: 500px;
-    height: 200px;
-    background-color: #e60000; /* Color rojo similar al ticket */
     position: relative;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra para efecto 3D */
-    overflow: hidden;
-    clip-path: polygon(
-        0% 0%, 5% 10%, 0% 20%, 5% 30%, 0% 40%, 5% 50%, 
-        0% 60%, 5% 70%, 0% 80%, 5% 90%, 0% 100%, 
-        100% 100%, 95% 90%, 100% 80%, 95% 70%, 100% 60%, 
-        95% 50%, 100% 40%, 95% 30%, 100% 20%, 95% 10%, 100% 0%
-    ); /* Recortes en los bordes del ticket */
-}
-
-.left-section, .right-section {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: white; /* Texto en blanco */
-    text-align: center;
-    padding: 10px;
-    box-sizing: border-box;
-}
-
-.left-section {
-    border-right: 4px dashed #fff; /* Línea punteada */
-}
-
-.left-section h1 {
-    font-size: 3em;
-    margin: 0;
-}
-
-.left-section p {
-    font-size: 1.2em;
-    margin: 5px 0 0 0;
-}
-
-.right-section p {
-    font-size: 2em;
-    margin: 0;
-}
-
-.contenido {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 20px 0;
-    background-color: transparent
-}
-
-.opciones, .informacion{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    margin: 20px;
-    padding: 20px;
-    width: 100%;
+    width: 340px; /* Ajusta según tus necesidades */
+    height: 200px; /* Ajusta según tus necesidades */
+    overflow: hidden; /* Oculta cualquier parte de la imagen que sobresalga */
     background-color: transparent;
 }
 
-
-.opcion, .informacion> div, .informacion> a {
-    display: flex;
-    flex-direction: column; /* Alinea el contenido (h1 e img) en columna */
-    justify-content: center;
-    align-items: center;
-    width: 400px; /* Ancho fijo para todas las opciones */
-    height: 300px; /* Alto fijo para todas las opciones */
-    margin: 10px; /* Espacio entre cada opción */
-    background-color: #e0f7e9;
-    border: 2px solid #4caf50; /* Borde de cada opción */
-    border-radius: 10px; /* Bordes redondeados */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
-    transition: transform 0.3s; /* Transición para efecto hover */
+.ticket-image {
+    width: 100%; /* Hace que la imagen ocupe todo el ancho del div */
+    height: 100%; /* Hace que la imagen ocupe toda la altura del div */
+    object-fit: cover; /* Mantiene la proporción de la imagen */
 }
 
-.opcion>h1{
-    background-color: #e0f7e9;
-}
-.opcion:hover {
-    transform: scale(1.05); /* Efecto hover para aumentar tamaño */
-}
-
-.opcion img {
-    max-width: 50%;
-    height: auto;
-    border-radius: 5px;
-}
-
-.concepto>p{
+.ticket-text {
     text-align: center;
-    background-color: #e0f7e9;
-    padding: 5px
+    position: absolute;
+    top: 50%; /* Centra verticalmente */
+    left: 50%; /* Centra horizontalmente */
+    transform: translate(-50%, -50%); /* Ajusta la posición para centrar */
+    color: white; /* Color del texto */
+    font-size: 36px; /* Tamaño de fuente */
+    font-weight: bold; /* Negrita */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombra de texto para mejor legibilidad */
 }
 
-a {
-    color: #000; /* Color del enlace normal */
-    text-decoration: none; /* Eliminar subrayado del enlace (opcional) */
+
+
+
+.content {
+    display: flex; /* Utiliza flexbox para crear columnas */
+    justify-content: space-between; /* Espaciado entre columnas */
+    margin: 20px; /* Espacio alrededor del contenedor */
+    gap: 40px;
 }
 
-a:visited {
-    color: #000; /* Color del enlace visitado */
+.column-left {
+    display: flex;
+    flex-direction: column; /* Organiza el contenido en una columna */
+    justify-content: space-between; /* Espaciado entre los elementos */
+    width: 45%; /* Ajusta el ancho de la columna */
 }
 
-a:hover {
-    color: #000; /* Color del enlace al pasar el cursor */
+.column-right {
+    width: 50%; /* Ajusta el ancho de la columna */
+    padding: 0px 20px;
+    border: #003399 solid 4px;
+    border-radius: 20px;
+    font-size: 20px;
+    background-color: #003399;
+    color: white;
+    text-align: justify;
 }
 
-a:active {
-    color: #000; /* Color del enlace activo */
+.button {
+    display: flex; /* Activa el modelo flexbox */
+    align-items: center; /* Centra verticalmente el contenido */
+    justify-content: center; /* Centra horizontalmente el contenido */
+    padding: 10px 20px; /* Espaciado interno del botón */
+    background-color: #CC9900; /* Color de fondo del botón */
+    color: white; /* Color del texto del botón */
+    border: none; /* Sin borde */
+    border-radius: 20px; /* Bordes redondeados */
+    text-decoration: none; /* Sin subrayado */
+    height: 100%; /* Altura del botón */
+    font-size: 40px;
 }
+
+.footer {
+    margin-top: 20px; /* Espacio encima del logo */
+}
+
+.logo {
+    max-width: 100%; /* Asegura que el logo no sobresalga */
+    height: auto; /* Mantiene la proporción */
+}
+
